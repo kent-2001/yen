@@ -146,38 +146,224 @@
     
 
 
-    body{
-    margin: 0;
-    background-color: black;
-    height: 100vh;
-    overflow: hidden;
+    @-webkit-keyframes heart-fly-1 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0.8;
+    transform: translate(10%, -100%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
 }
-span{
-    background: url(https://cdn2.iconfinder.com/data/icons/lin/128/14.png);
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    background-size: cover;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    /*--------------Third------------*/
-    animation: animation 7s linear;
+@keyframes heart-fly-1 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0.8;
+    transform: translate(10%, -100%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
 }
-@keyframes animation{
-    0%{
-        transform: translate(-50%, -50%);
-        opacity: 1;
-        /*-------Fourth----------*/
-        filter: hue-rotate(0);
-    }
-    100%{
-        transform: translate(-50%, -5000%);
-        opacity: 0;
-        /*-------Fourth----------*/
-        filter: hue-rotate(720deg);
-    }
+@-webkit-keyframes heart-fly-2 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0.7;
+    transform: translate(-80%, -160%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+@keyframes heart-fly-2 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0.7;
+    transform: translate(-80%, -160%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes heart-fly-3 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0.6;
+    transform: translate(120%, -170%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+@keyframes heart-fly-3 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0.6;
+    transform: translate(120%, -170%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes heart-fly-4 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0.5;
+    transform: translate(30%, -250%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+@keyframes heart-fly-4 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0.5;
+    transform: translate(30%, -250%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes heart-fly-5 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0.4;
+    transform: translate(-60%, -250%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+@keyframes heart-fly-5 {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0.4;
+    transform: translate(-60%, -250%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+.add-heart {
+  position: absolute;
+  top: 6em;
+  left: 50%;
+  font-size: 2rem;
+  width: 1em;
+  height: 1em;
+  background-image: url(tim3.png);
+  background-size: 100%;
+  margin-top: 100px;
+  margin-left: 114px;
+}
+.add-heart span {
+  position: absolute;
+  display: block;
+  font-size: inherit;
+  width: 1em;
+  height: 1em;
+  bottom: 0.5em;
+}
+.add-heart span:before {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-image: url(tim3.png);
+  background-size: 100%;
+}
+.add-heart span:nth-child(1) {
+  -webkit-animation: heart-fly-1 1s infinite;
+          animation: heart-fly-1 1s infinite;
+}
+.add-heart span:nth-child(1):before {
+  width: 0.9em;
+  height: 0.9em;
+  transform: rotate(-10deg);
+}
+.add-heart span:nth-child(2) {
+  -webkit-animation: heart-fly-2 1s infinite;
+          animation: heart-fly-2 1s infinite;
+}
+.add-heart span:nth-child(2):before {
+  width: 0.8em;
+  height: 0.8em;
+  transform: rotate(10deg);
+}
+.add-heart span:nth-child(3) {
+  -webkit-animation: heart-fly-3 1s infinite;
+          animation: heart-fly-3 1s infinite;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+.add-heart span:nth-child(3):before {
+  width: 0.7em;
+  height: 0.7em;
+  transform: rotate(20deg);
+}
+.add-heart span:nth-child(4) {
+  -webkit-animation: heart-fly-4 1s infinite;
+          animation: heart-fly-4 1s infinite;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.add-heart span:nth-child(4):before {
+  width: 0.6em;
+  height: 0.6em;
+  transform: rotate(5deg);
+}
+.add-heart span:nth-child(5) {
+  -webkit-animation: heart-fly-5 1s infinite;
+          animation: heart-fly-5 1s infinite;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.add-heart span:nth-child(5):before {
+  width: 0.5em;
+  height: 0.5em;
+  transform: rotate(-20deg);
 }
     </style>
 </head>
@@ -193,6 +379,13 @@ span{
             <img src="tim1.png">
             <p>Happy Women's Day</p>
             <img src="tim.png">
+            <div class="add-heart">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
         <div class="giay">
             <img src="giay.jpg" alt="">
@@ -205,7 +398,9 @@ span{
         <div class="hinh_oval"></div>
     </div>
     
-   
+    
+
+    
     <script type="text/javascript">
         $(document).ready(function(){
             $('#tim2').click(function(){
@@ -216,28 +411,6 @@ span{
             });
         });
 
-    </script>
-    <script>
-        const bodyEl = document.querySelector("body");
-
-        bodyEl.addEventListener("mousemove", (event)=>{
-        const xPosition = event.offsetX
-        const ypoistion = event.offsetY
-        const spanEl = document.createElement("span");
-
-        spanEl.style.left = xPosition + "px";
-        spanEl.style.top = ypoistion + "px";
-
-        const size = Math.random()*100;
-        spanEl.style.width = size + "px";
-        spanEl.style.height = size + "px";
-
-        bodyEl.appendChild(spanEl);
-
-        setTimeout(()=>{
-            spanEl.remove();
-        }, 3000);
-        });
     </script>
 </body>
 </html>
