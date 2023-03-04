@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://png.pngtree.com/png-clipart/20210311/original/pngtree-red-ink-png-image_6020270.jpg" type="image/png">
+    <title>8/3</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+    .arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 200px solid transparent;
+    border-left: 300px solid #de9f96;
+    z-index: 3;
+    margin-top: 200px;
+    }
+    .arrow-left {
+    width: 0; 
+    height: 0; 
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid transparent; 
+    border-right: 220px solid #d88a86; 
+    margin-left: -220px;
+    z-index: 2;
+    margin-top: 200px;
+    }
+
+    .arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 100px solid transparent;
+    border-right: 200px solid transparent;
+    
+    border-bottom: 100px solid #d3727b;
+    position: absolute;
+    margin-top: 100px;
+    }
+    .thu{
+        position: relative;
+        display: flex;
+        animation: mymove 4s infinite;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        align-content: stretch;
+        margin-top: 7%;
+    }
+    @keyframes mymove{
+        0%   {top: 0px;}
+        50%  {top: -50px;}
+        100% {top: 0px;}
+    }
+
+    .parent{
+        display: flex;
+        justify-content: center;
+    }
+    .hinh_oval {
+        width: 200px;
+        height: 50px;
+        background: #a59490;
+        border-radius: 200px / 50px;
+        box-shadow: 0px 3px 3px 1px #a59490;
+        position: relative;
+        animation: move 4s infinite;
+
+    }
+    @keyframes move{
+        0%   {
+            width: 300px;
+            height: 50px;
+            border-radius: 300px / 50px;
+        }
+        50%  {
+            width: 200px;
+            height: 50px;
+            border-radius: 200px / 50px;
+        }
+        100% {
+            width: 300px;
+            height: 50px;
+            border-radius: 300px / 50px;
+        }
+    }
+
+    .tim{
+        position: absolute;
+        z-index: 4;
+        display: flex;
+    }
+    .tim p{
+        font-family: 'Satisfy', cursive;
+        margin-top: 330px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .tim img{
+        width: 80px;
+        height: 80px;
+        margin-top: 300px;
+    }
+    #tim2{
+        width: 50px;
+        height: 50px;
+        margin-top: 260px;
+        margin-left: 100px;
+        position: absolute;
+ 
+    }
+    .giay{
+        position: absolute;
+    }
+    .giay img{
+        width: 300px;
+        height: 200px;
+        margin-top: 200px;  
+    }
+    .giay1{
+        position: absolute;
+        z-index: 1;
+    }
+    .giay2{
+        width: 300px;
+        height: 230px;
+        margin-top: 200px; 
+        opacity: 0;
+        transition: all ease 1.5s;
+        z-index: 1;
+    }
+    .open{
+        transform: translateY(-150px); 
+        z-index: 1;
+        opacity: 1;
+    }
+    .close{
+        transform: translateY(0px); 
+        z-index: 1;
+        opacity: 0;
+    }
+    
+
+
+    body{
+    margin: 0;
+    background-color: black;
+    height: 100vh;
+    overflow: hidden;
+}
+span{
+    background: url(https://cdn2.iconfinder.com/data/icons/lin/128/14.png);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-size: cover;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    /*--------------Third------------*/
+    animation: animation 7s linear;
+}
+@keyframes animation{
+    0%{
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        /*-------Fourth----------*/
+        filter: hue-rotate(0);
+    }
+    100%{
+        transform: translate(-50%, -5000%);
+        opacity: 0;
+        /*-------Fourth----------*/
+        filter: hue-rotate(720deg);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="thu">
+        <div class="arrow-up"></div>
+        <div class="arrow-right"></div>
+        <div class="arrow-left"></div>
+        
+        <div class="tim">
+            <img id="tim2" src="tim2.png" alt="">
+            
+            <img src="tim1.png">
+            <p>Happy Women's Day</p>
+            <img src="tim.png">
+        </div>
+        <div class="giay">
+            <img src="giay.jpg" alt="">
+        </div>
+        <div class="giay1">
+            <img class="giay2" src="giay.jpg" alt="">
+        </div>
+    </div>
+    <div class="parent">
+        <div class="hinh_oval"></div>
+    </div>
+    
+   
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#tim2').click(function(){
+                $('.giay2').addClass('open');
+            });
+            $('.parent').click(function(){
+                $('.giay2').addClass('close');
+            });
+        });
+
+    </script>
+    <script>
+        const bodyEl = document.querySelector("body");
+
+        bodyEl.addEventListener("mousemove", (event)=>{
+        const xPosition = event.offsetX
+        const ypoistion = event.offsetY
+        const spanEl = document.createElement("span");
+
+        spanEl.style.left = xPosition + "px";
+        spanEl.style.top = ypoistion + "px";
+
+        const size = Math.random()*100;
+        spanEl.style.width = size + "px";
+        spanEl.style.height = size + "px";
+
+        bodyEl.appendChild(spanEl);
+
+        setTimeout(()=>{
+            spanEl.remove();
+        }, 3000);
+        });
+    </script>
+</body>
+</html>
